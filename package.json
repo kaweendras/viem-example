@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node ./src/index.ts",
-    "generateAccount": "ts-node ./src/scripts/generateAccount.ts"
+    "generateAccount": "ts-node ./src/scripts/generateAccount.ts",
+    "compile": "ts-node ./src/scripts/compile.ts",
+    "compileAll": "ts-node ./src/scripts/compileAll.ts"
+
   },
   "keywords": [],
   "author": "kaweendras <salitha.wijerathna@gmail.com>",
@@ -21,7 +24,9 @@
     "url": "git+https://github.com/kaweendras/viem-example.git"
   },
   "dependencies": {
+    "@types/node": "^20.12.12",
     "dotenv": "^16.4.5",
+    "solc": "^0.8.26",
     "viem": "^2.13.1"
   }
 }
