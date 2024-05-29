@@ -1,4 +1,4 @@
-import { checkBalance } from "./functions";
+import { checkBalance, checkTransactionCount } from "./functions";
 
 (async () => {
   await checkBalance();
