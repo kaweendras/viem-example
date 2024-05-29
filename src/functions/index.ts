@@ -1,3 +1,4 @@
 import checkBalance from "./checkBalance";
+import checkTransactionCount from "./checkTransactionCount";
 
-export { checkBalance };
+export { checkBalance, checkTransactionCount };
