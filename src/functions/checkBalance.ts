@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 
-import { formatEther } from "viem";
+import { Hex, formatEther } from "viem";
 import { createClient } from "../utils/createClient";
 
 dotenv.config();
@@ -11,7 +11,7 @@ const checkBalance = async () => {
   const client = await createClient();
 
   const balance = await client.getBalance({
-    address: accountAddress as `0x${string}`,
+    address: accountAddress as Hex,
   });
 
   const formattedBalance = formatEther(balance);
