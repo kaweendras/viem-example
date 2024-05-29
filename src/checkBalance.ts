@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { createPublicClient, http } from "viem";
+import { createPublicClient, formatEther, http } from "viem";
 import { arbitrumSepolia } from "viem/chains";
 
 dotenv.config();
@@ -16,7 +16,8 @@ const balance = async () => {
     address: accountAddress as `0x${string}`,
   });
 
-  console.log("Balance -", balance);
+  const formattedBalance = formatEther(balance);
+  console.log("Balance -", formattedBalance);
 };
 
 balance();
