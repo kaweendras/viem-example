@@ -1,28 +1,22 @@
 import dotenv from "dotenv";
+import creaeContract from "./helpers/createContract";
 import { Hex } from "viem";
-import createWalletclient from "../utils/createWalletClient";
 const Fun = require("../artifacts/Fun.json");
 
 dotenv.config();
 
-const { abi } = Fun;
+const { abi, bytecode } = Fun;
 
 const writeContract = async () => {
-  const client = await createWalletclient();
-  const txHash = await client.writeContract({
-    abi,
-    address: process.env.CONTRACT_ADDRESS as Hex,
-    functionName: "changeX",
-    args: [400],
-  });
+  const contract = await creaeContract();
 
-  console.log("Transaction Hash -", txHash);
+  if (contract) {
+    const txHash = await contract.write.changeX([1700]);
 
-  const receipt = await client.getTransactionReceipt({
-    hash: txHash,
-  });
+    console.log("Transaction Hash -", txHash);
 
-  console.log("Status -", receipt.status);
+    console.log("x value -", await contract.read.getX([]));
+  }
 };
 
 writeContract();
