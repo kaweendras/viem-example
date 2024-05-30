@@ -12,7 +12,7 @@ const deployContract = async () => {
   const hash = await client.deployContract({
     abi,
     bytecode: bytecode.startsWith("0x") ? bytecode : `0x${bytecode}`,
-    args: [],
+    args: [100],
   });
   console.log(`https://sepolia.arbiscan.io/tx/${hash}`);
 
