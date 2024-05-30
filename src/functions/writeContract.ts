@@ -11,11 +11,18 @@ const writeContract = async () => {
   const contract = await creaeContract();
 
   if (contract) {
-    const txHash = await contract.write.changeX([1700]);
+    const txHash = await contract.write.changeX([2900]);
 
     console.log("Transaction Hash -", txHash);
 
     console.log("x value -", await contract.read.getX([]));
+
+    const event = await contract.getEvents.XChanged({
+      fromBlock: "earliest",
+      toBlock: "latest",
+    });
+
+    console.log("Events -", event);
   }
 };
 
