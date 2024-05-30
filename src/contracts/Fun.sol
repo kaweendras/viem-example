@@ -3,8 +3,8 @@ pragma solidity 0.8.26;
 
 contract Fun {
     uint256 public x;
-    constructor() {
-        x = 0;        
+    constructor(uint256 _x) {
+        x = _x;        
     }
 
     function changeX(uint256 _x) public {
