@@ -17,7 +17,7 @@ const deployContract = async () => {
   console.log(`https://sepolia.arbiscan.io/tx/${hash}`);
 
   const receipt = await client.getTransactionReceipt({
-    hash: "0x495f2d47fb7db2f26cc111b337133398221dff10b11ad80fee0e6a55ee77b9f6",
+    hash,
   });
   console.log("Contract Address -", receipt.contractAddress);
 };
