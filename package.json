@@ -10,7 +10,6 @@
     "compile": "ts-node ./src/scripts/compile.ts",
     "compileAll": "ts-node ./src/scripts/compileAll.ts",
     "deploy": "ts-node ./src/scripts/deploy.ts"
-
   },
   "keywords": [],
   "author": "kaweendras <salitha.wijerathna@gmail.com>",
