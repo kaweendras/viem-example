@@ -1,19 +1,22 @@
 import dotenv from "dotenv";
 import creaeContract from "./helpers/createContract";
-const Fun = require("../artifacts/Fun.json");
-dotenv.config();
+import sendTelegramMessage from "../utils/telegramBot";
+import encodeMSG from "../utils/encodeMSG";
 
-const contractAddress = process.env.CONTRACT_ADDRESS;
+dotenv.config();
 
 const events = async () => {
   const contract = await creaeContract();
 
   if (contract) {
+    console.log("Watching for events...");
     await contract.watchEvent.XChanged(
       {},
       {
         onLogs: (logs) => {
           console.log("Logs -", logs);
+          const encodedMsg = encodeMSG(logs[0]);
+          sendTelegramMessage(encodedMsg);
         },
       }
     );
