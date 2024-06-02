@@ -4,7 +4,7 @@
   "description": "VIEM is a framework for building reliable Ethereum apps and libraries using lightweight, composable, and type-safe modules. It simplifies interaction with Ethereum, enhancing development efficiency and code safety.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "ts-node ./src/index.ts",
     "generateAccount": "ts-node ./src/scripts/generateAccount.ts",
     "compile": "ts-node ./src/scripts/compile.ts",
@@ -16,7 +16,9 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
+    "ts-jest": "^29.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
