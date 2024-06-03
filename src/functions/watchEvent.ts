@@ -24,3 +24,5 @@ const events = async () => {
 };
 
 events();
+
+export default events;
