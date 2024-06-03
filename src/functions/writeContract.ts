@@ -20,3 +20,5 @@ const writeContract = async () => {
 };
 
 writeContract();
+
+export default writeContract;

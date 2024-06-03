@@ -16,3 +16,5 @@ const readContract = async () => {
 };
 
 readContract();
+
+export default readContract;

@@ -7,7 +7,7 @@ dotenv.config();
 
 const { abi, bytecode } = Fun;
 
-const readContract = async () => {
+const readContractOld = async () => {
   const client = await createWalletclient();
   const xValue = await client.readContract({
     abi,
@@ -19,4 +19,6 @@ const readContract = async () => {
   console.log("x value -", xValue);
 };
 
-readContract();
+readContractOld();
+
+export default readContractOld;
