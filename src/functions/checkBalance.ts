@@ -16,6 +16,7 @@ const checkBalance = async () => {
 
   const formattedBalance = formatEther(balance);
   console.log("Balance -", formattedBalance);
+  return formattedBalance;
 };
 
 export default checkBalance;
