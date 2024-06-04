@@ -17,4 +17,6 @@ const checkTransactionCount = async () => {
   console.log("Tx Count -", txCount);
 };
 
+checkTransactionCount();
+
 export default checkTransactionCount;
