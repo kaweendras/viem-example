@@ -8,7 +8,10 @@ describe("checkBalance", () => {
     // Act
     const balance = await checkBalance();
 
+    //covert balance to number
+    const balanceNumber = Number(balance);
+
     // Assert
-    expect(balance).toEqual(expectedBalance);
+    expect(balanceNumber).toEqual(expectedBalance);
   });
 });

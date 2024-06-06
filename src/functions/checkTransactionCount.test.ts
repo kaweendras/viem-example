@@ -6,14 +6,9 @@ describe("checkTransactionCount", () => {
     const expectedTxCount = 50; // replace with the expected transaction count
 
     // Act
-    const txCount = await test();
+    const txCount = await checkTransactionCount();
 
     // Assert
     expect(txCount).toEqual(expectedTxCount);
   });
 });
-
-async function test() {
-  const result = await checkTransactionCount();
-  return result;
-}
