@@ -23,3 +23,5 @@ const deployContract = async () => {
 };
 
 deployContract();
+
+export default deployContract;
