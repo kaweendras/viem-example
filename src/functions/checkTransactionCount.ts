@@ -14,7 +14,6 @@ const checkTransactionCount = async () => {
     address: accountAddress as Hex,
   });
 
-  console.log("Tx Count -", txCount);
   return txCount;
 };
 
